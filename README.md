@@ -51,3 +51,16 @@ You should not be asked for a username or password. If it works, your SSH key is
 vagrant init ubuntu/bionic64
 
 vagrant up
+vagrant up --provider=qemu
+vagrant halt
+vagrant destroy
+
+chmod +x start-rsync-auto.sh 
+
+# creation of virtual environment on the guest VM machine
+python -m venv ~/env
+
+nohup vagrant rsync-auto > rsync-auto.log 2>&1 &
+to stop it use 
+ps aux | grep rsync-auto
+kill <PID>
