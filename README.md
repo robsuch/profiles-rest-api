@@ -64,3 +64,4 @@ nohup vagrant rsync-auto > rsync-auto.log 2>&1 &
 to stop it use 
 ps aux | grep rsync-auto
 kill <PID>
+
